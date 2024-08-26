@@ -3361,10 +3361,12 @@ BX_STATIC_ASSERT(BX_COUNTOF(s_accessNames) == Access::Count, "Invalid s_accessNa
 		if (s_renderMtl->m_hasPixelFormatDepth32Float_Stencil8)
 		{
 			desc.pixelFormat = MTLPixelFormatDepth32Float_Stencil8;
+			desc.swizzle = { MTLTextureSwizzleRed, MTLTextureSwizzleGreen, MTLTextureSwizzleBlue, MTLTextureSwizzleAlpha };
 		}
 		else
 		{
 			desc.pixelFormat = MTLPixelFormatDepth32Float;
+			desc.swizzle = { MTLTextureSwizzleRed, MTLTextureSwizzleGreen, MTLTextureSwizzleBlue, MTLTextureSwizzleAlpha };
 		}
 
 		desc.width  = _width;
